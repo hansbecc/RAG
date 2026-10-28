@@ -1,0 +1,3 @@
+[console_scripts]
+cgr-rag = rag_cgr.cli:main
+cgr-scraper = scraper_cgr.cli:main

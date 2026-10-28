@@ -1,0 +1,15 @@
+pyproject.toml
+scraper_cgr/__init__.py
+scraper_cgr/capture.py
+scraper_cgr/cli.py
+scraper_cgr/client.py
+scraper_cgr/export.py
+scraper_cgr/filters.py
+scraper_cgr_cusco.egg-info/PKG-INFO
+scraper_cgr_cusco.egg-info/SOURCES.txt
+scraper_cgr_cusco.egg-info/dependency_links.txt
+scraper_cgr_cusco.egg-info/entry_points.txt
+scraper_cgr_cusco.egg-info/requires.txt
+scraper_cgr_cusco.egg-info/top_level.txt
+tests/test_rag_helpers.py
+tests/test_scraper.py

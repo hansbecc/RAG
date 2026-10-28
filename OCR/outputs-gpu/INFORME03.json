@@ -1,0 +1,38 @@
+{
+  "documento": "INFORME03.pdf",
+  "requiere_revision_humana": true,
+  "metadatos": {
+    "id_informe": "011-2021-OCI/1686-SCC",
+    "anio_emision": "2021",
+    "organo_control": null,
+    "entidad_ejecutora": null,
+    "provincia": null,
+    "distrito": null,
+    "cui_snip": null,
+    "nombre_proyecto": null,
+    "sector_tipologia_pip": null,
+    "monto_inversion_soles": "S/ 3",
+    "modalidad_ejecucion": null,
+    "modalidad_control": null,
+    "fase_ejecucion_pip": null,
+    "hito_control": null
+  },
+  "situaciones_adversas": [],
+  "observaciones": [
+    "Caracterizacion heuristica desde OCR de PaddleOCR: INFORME03.pdf. Los campos no identificados o que requieren interpretacion semantica se dejan vacios; validar texto, paginas y clasificaciones contra el PDF original."
+  ],
+  "citas_metadatos": {
+    "id_informe": {
+      "pagina": 1,
+      "texto": "011-2021-OCI/1686-SCC"
+    },
+    "anio_emision": {
+      "pagina": 1,
+      "texto": "2021"
+    },
+    "monto_inversion_soles": {
+      "pagina": 2,
+      "texto": "S/ 3"
+    }
+  }
+}

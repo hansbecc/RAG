@@ -1,0 +1,34 @@
+{
+  "documento": "INFORME05.pdf",
+  "requiere_revision_humana": true,
+  "metadatos": {
+    "id_informe": null,
+    "anio_emision": "2026",
+    "organo_control": null,
+    "entidad_ejecutora": null,
+    "provincia": null,
+    "distrito": null,
+    "cui_snip": null,
+    "nombre_proyecto": null,
+    "sector_tipologia_pip": null,
+    "monto_inversion_soles": "S/ 12",
+    "modalidad_ejecucion": null,
+    "modalidad_control": null,
+    "fase_ejecucion_pip": null,
+    "hito_control": null
+  },
+  "situaciones_adversas": [],
+  "observaciones": [
+    "Caracterizacion heuristica desde OCR de PaddleOCR: INFORME05.pdf. Los campos no identificados o que requieren interpretacion semantica se dejan vacios; validar texto, paginas y clasificaciones contra el PDF original."
+  ],
+  "citas_metadatos": {
+    "anio_emision": {
+      "pagina": 1,
+      "texto": "2026"
+    },
+    "monto_inversion_soles": {
+      "pagina": 4,
+      "texto": "S/ 12"
+    }
+  }
+}

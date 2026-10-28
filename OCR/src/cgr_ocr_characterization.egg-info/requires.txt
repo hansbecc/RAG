@@ -1,0 +1,17 @@
+PyMuPDF<2,>=1.24
+
+[cpu]
+paddlepaddle<4,>=3.0
+paddleocr<4,>=3.0
+
+[easyocr]
+easyocr<2,>=1.7
+
+[paddle]
+paddleocr<4,>=3.0
+
+[pytesseract]
+pytesseract<0.4,>=0.3.10
+
+[test]
+pytest<9,>=8

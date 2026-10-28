@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: cgr-ocr-characterization
+Version: 0.1.0
+Summary: Caracterizacion de informes de control mediante PaddleOCR
+Requires-Python: <3.13,>=3.10
+Requires-Dist: PyMuPDF<2,>=1.24
+Provides-Extra: paddle
+Requires-Dist: paddleocr<4,>=3.0; extra == "paddle"
+Provides-Extra: cpu
+Requires-Dist: paddlepaddle<4,>=3.0; extra == "cpu"
+Requires-Dist: paddleocr<4,>=3.0; extra == "cpu"
+Provides-Extra: test
+Requires-Dist: pytest<9,>=8; extra == "test"
+Provides-Extra: easyocr
+Requires-Dist: easyocr<2,>=1.7; extra == "easyocr"
+Provides-Extra: pytesseract
+Requires-Dist: pytesseract<0.4,>=0.3.10; extra == "pytesseract"

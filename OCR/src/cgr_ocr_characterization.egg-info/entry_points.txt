@@ -1,0 +1,2 @@
+[console_scripts]
+cgr-characterize = ocr_characterization.cli:main
