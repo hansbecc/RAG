@@ -7,7 +7,7 @@ import asyncio
 import logging
 from pathlib import Path
 
-from rag_cgr.pipeline import answer_question, ingest_pdf_directory
+from rag_cgr.pipeline import answer_question, characterize_report, ingest_pdf_directory
 from rag_cgr.settings import RAGSettings
 
 
@@ -18,6 +18,10 @@ def build_parser() -> argparse.ArgumentParser:
     ingest.add_argument("--pdf-dir", type=Path, default=None)
     ask = commands.add_parser("ask", help="Genera un reporte analítico con citas.")
     ask.add_argument("question", help="Pregunta en lenguaje natural.")
+    characterize = commands.add_parser(
+        "characterize", help="Caracteriza un PDF indexado usando evidencia y citas."
+    )
+    characterize.add_argument("file_name", help="Nombre del PDF previamente indexado.")
     parser.add_argument("--verbose", action="store_true")
     return parser
 
@@ -27,6 +31,9 @@ async def _run(args: argparse.Namespace) -> int:
     if args.command == "ingest":
         page_count = await ingest_pdf_directory(args.pdf_dir, settings)
         print(f"Ingesta terminada: {page_count} páginas procesadas.")
+        return 0
+    if args.command == "characterize":
+        print(await characterize_report(args.file_name, settings))
         return 0
     print(await answer_question(args.question, settings))
     return 0

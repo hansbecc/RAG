@@ -1,4 +1,9 @@
 pyproject.toml
+rag_cgr/__init__.py
+rag_cgr/cli.py
+rag_cgr/evaluate.py
+rag_cgr/pipeline.py
+rag_cgr/settings.py
 scraper_cgr/__init__.py
 scraper_cgr/capture.py
 scraper_cgr/cli.py

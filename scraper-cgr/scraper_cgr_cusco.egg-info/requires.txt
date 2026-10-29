@@ -10,14 +10,24 @@ pytest<9,>=8
 llama-index-core<1,>=0.12
 llama-index-readers-file<1,>=0.4
 llama-index-vector-stores-qdrant<1,>=0.4
-llama-index-embeddings-openai<1,>=0.3
-llama-index-llms-openai<1,>=0.3
-llama-index-postprocessor-cohere-rerank<1,>=0.2
+llama-index-embeddings-ollama<1,>=0.3
+llama-index-llms-ollama<1,>=0.3
 qdrant-client<2,>=1.13
 fastembed<1,>=0.7
+
+[rag-cohere]
+llama-index-postprocessor-cohere-rerank<1,>=0.2
 
 [rag-eval]
 ragas<1,>=0.2
 
 [rag-ocr]
 llama-parse<1,>=0.6
+
+[rag-openai]
+llama-index-embeddings-openai<1,>=0.3
+llama-index-llms-openai<1,>=0.3
+
+[rag-paddle-ocr]
+paddleocr<4,>=3.0
+PyMuPDF<2,>=1.24

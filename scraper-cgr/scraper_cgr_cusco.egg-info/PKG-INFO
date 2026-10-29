@@ -13,12 +13,19 @@ Provides-Extra: rag
 Requires-Dist: llama-index-core<1,>=0.12; extra == "rag"
 Requires-Dist: llama-index-readers-file<1,>=0.4; extra == "rag"
 Requires-Dist: llama-index-vector-stores-qdrant<1,>=0.4; extra == "rag"
-Requires-Dist: llama-index-embeddings-openai<1,>=0.3; extra == "rag"
-Requires-Dist: llama-index-llms-openai<1,>=0.3; extra == "rag"
-Requires-Dist: llama-index-postprocessor-cohere-rerank<1,>=0.2; extra == "rag"
+Requires-Dist: llama-index-embeddings-ollama<1,>=0.3; extra == "rag"
+Requires-Dist: llama-index-llms-ollama<1,>=0.3; extra == "rag"
 Requires-Dist: qdrant-client<2,>=1.13; extra == "rag"
 Requires-Dist: fastembed<1,>=0.7; extra == "rag"
+Provides-Extra: rag-openai
+Requires-Dist: llama-index-embeddings-openai<1,>=0.3; extra == "rag-openai"
+Requires-Dist: llama-index-llms-openai<1,>=0.3; extra == "rag-openai"
+Provides-Extra: rag-cohere
+Requires-Dist: llama-index-postprocessor-cohere-rerank<1,>=0.2; extra == "rag-cohere"
 Provides-Extra: rag-ocr
 Requires-Dist: llama-parse<1,>=0.6; extra == "rag-ocr"
+Provides-Extra: rag-paddle-ocr
+Requires-Dist: paddleocr<4,>=3.0; extra == "rag-paddle-ocr"
+Requires-Dist: PyMuPDF<2,>=1.24; extra == "rag-paddle-ocr"
 Provides-Extra: rag-eval
 Requires-Dist: ragas<1,>=0.2; extra == "rag-eval"

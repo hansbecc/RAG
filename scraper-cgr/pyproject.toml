@@ -17,13 +17,18 @@ rag = [
 	"llama-index-core>=0.12,<1",
 	"llama-index-readers-file>=0.4,<1",
 	"llama-index-vector-stores-qdrant>=0.4,<1",
-	"llama-index-embeddings-openai>=0.3,<1",
-	"llama-index-llms-openai>=0.3,<1",
-	"llama-index-postprocessor-cohere-rerank>=0.2,<1",
-	"qdrant-client>=1.13,<2",
+	"llama-index-embeddings-ollama>=0.3,<1",
+	"llama-index-llms-ollama>=0.3,<1",
+	"qdrant-client>=1.13,<1.14",
 	"fastembed>=0.7,<1",
 ]
+rag-openai = [
+	"llama-index-embeddings-openai>=0.3,<1",
+	"llama-index-llms-openai>=0.3,<1",
+]
+rag-cohere = ["llama-index-postprocessor-cohere-rerank>=0.2,<1"]
 rag-ocr = ["llama-parse>=0.6,<1"]
+rag-paddle-ocr = ["paddleocr>=3.0,<4", "PyMuPDF>=1.24,<2"]
 rag-eval = ["ragas>=0.2,<1"]
 
 [project.scripts]
@@ -31,7 +36,7 @@ cgr-scraper = "scraper_cgr.cli:main"
 cgr-rag = "rag_cgr.cli:main"
 
 [tool.setuptools.packages.find]
-include = ["scraper_cgr*"]
+include = ["scraper_cgr*", "rag_cgr*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
