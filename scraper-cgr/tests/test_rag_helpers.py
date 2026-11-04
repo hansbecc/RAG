@@ -6,6 +6,7 @@ from unittest.mock import patch
 from rag_cgr import cli
 from rag_cgr.pipeline import (
     CHARACTERIZATION_PROMPT,
+    _load_transcription,
     _load_paddleocr_pdf,
     citation_label,
     content_fingerprint,
@@ -41,6 +42,24 @@ class UtilityTests(unittest.TestCase):
         with_bibliography = ensure_bibliography(report, [citation])
         self.assertIn(citation, with_bibliography)
         self.assertEqual(ensure_bibliography(with_bibliography, [citation]), with_bibliography)
+
+    def test_transcription_pages_keep_pdf_name_and_page_numbers(self):
+        from tempfile import TemporaryDirectory
+
+        with TemporaryDirectory() as directory:
+            path = Path(directory) / "INFORME03.response.txt"
+            path.write_text(
+                "[OCR_PAGE:1]\nPrimera página\n\n[OCR_PAGE:3]\nTercera página\n",
+                encoding="utf-8",
+            )
+            documents = _load_transcription(path)
+
+        self.assertEqual([document.metadata["file_name"] for document in documents], [
+            "INFORME03.pdf",
+            "INFORME03.pdf",
+        ])
+        self.assertEqual([document.metadata["page_number"] for document in documents], [1, 3])
+        self.assertIn("Tercera página", documents[1].text)
 
 
 class SettingsTests(unittest.TestCase):

@@ -7,7 +7,12 @@ import asyncio
 import logging
 from pathlib import Path
 
-from rag_cgr.pipeline import answer_question, characterize_report, ingest_pdf_directory
+from rag_cgr.pipeline import (
+    answer_question,
+    characterize_report,
+    ingest_pdf_directory,
+    ingest_transcription_directory,
+)
 from rag_cgr.settings import RAGSettings
 
 
@@ -16,6 +21,10 @@ def build_parser() -> argparse.ArgumentParser:
     commands = parser.add_subparsers(dest="command", required=True)
     ingest = commands.add_parser("ingest", help="Procesa e indexa archivos PDF en Qdrant.")
     ingest.add_argument("--pdf-dir", type=Path, default=None)
+    ingest_ocr = commands.add_parser(
+        "ingest-transcriptions", help="Indexa transcripciones OCR .response.txt paginadas."
+    )
+    ingest_ocr.add_argument("--text-dir", type=Path, required=True)
     ask = commands.add_parser("ask", help="Genera un reporte analítico con citas.")
     ask.add_argument("question", help="Pregunta en lenguaje natural.")
     characterize = commands.add_parser(
@@ -31,6 +40,10 @@ async def _run(args: argparse.Namespace) -> int:
     if args.command == "ingest":
         page_count = await ingest_pdf_directory(args.pdf_dir, settings)
         print(f"Ingesta terminada: {page_count} páginas procesadas.")
+        return 0
+    if args.command == "ingest-transcriptions":
+        page_count = await ingest_transcription_directory(args.text_dir, settings)
+        print(f"Ingesta de transcripciones terminada: {page_count} páginas procesadas.")
         return 0
     if args.command == "characterize":
         print(await characterize_report(args.file_name, settings))
